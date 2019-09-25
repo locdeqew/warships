@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start ts-node -- -P tsconfig.json index.ts --watch",
+    "start": "webpack-dev-server --watch --no-inline --config ./webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,15 +18,19 @@
     "url": "https://github.com/locdeqew/warships/issues"
   },
   "homepage": "https://github.com/locdeqew/warships#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongodb": "^3.3.2",
-    "socket.io": "^2.3.0"
-  },
   "devDependencies": {
-    "@types/express": "^4.17.1",
-    "@types/node": "^12.7.7",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.3"
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.1.2",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "socket.io-client": "^2.3.0"
   }
 }
