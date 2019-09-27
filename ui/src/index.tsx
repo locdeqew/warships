@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from "react-router-dom";
  * Store
  */
 
-import { Store } from "redux";
+import store from './store/store';
 
 /**
  * Components
@@ -19,7 +19,6 @@ import { Store } from "redux";
 import { AppRouter } from './appRouter';
 
 const root = document.getElementById('root');
-let store: Store;
 
 render(
     <Provider store={store}>
