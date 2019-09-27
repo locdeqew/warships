@@ -1,9 +1,31 @@
+/**
+ * Vendor
+ */
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from "react-router-dom";
 
-import { Hello } from "./components/Hello";
+/**
+ * Store
+ */
 
-ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("app")
+import { Store } from "redux";
+
+/**
+ * Components
+ */
+
+import { AppRouter } from './appRouter';
+
+const root = document.getElementById('root');
+let store: Store;
+
+render(
+    <Provider store={store}>
+        <Router>
+            <AppRouter/>
+        </Router>
+    </Provider>,
+    root
 );

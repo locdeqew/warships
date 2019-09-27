@@ -1,0 +1,1 @@
+export const isAutorised = () => false;
