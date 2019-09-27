@@ -7,7 +7,7 @@ module.exports = {
 
     resolve: {
         modules: ["src", "node_modules"],
-        extensions: [".ts", ".tsx"]
+        extensions: [".js", ".ts", ".tsx"]
     },
 
     module: {

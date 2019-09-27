@@ -3,7 +3,7 @@
 **/
 
 import * as React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route as ConnectedRoute } from 'react-router-dom';
 
 /**
  * Components
@@ -20,7 +20,7 @@ import {
 const AppRouter: React.FC = () => (
     <Switch>
         <Route path='/' component={Dashboard} exact></Route>
-        <Route path='/login' component={LoginForm}></Route>
+        <ConnectedRoute path='/login' component={LoginForm}></ConnectedRoute>
     </Switch>
 )
 

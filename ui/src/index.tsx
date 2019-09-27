@@ -18,7 +18,9 @@ import store from './store/store';
 
 import { AppRouter } from './appRouter';
 
-const root = document.getElementById('root');
+const root = document.getElementById('app');
+
+console.log('r', root);
 
 render(
     <Provider store={store}>
