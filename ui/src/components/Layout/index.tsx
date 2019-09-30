@@ -10,17 +10,27 @@ import * as React from 'react';
 import styles from './styles.module.css'
 
 export interface LayoutProps {
-    contentChildren: React.FC
+    contentChildren: React.FC,
+    props?: Object
 }
 
-console.log('sss', styles);
+const Header: React.FC = () => (
+    <header>
+        Header
+    </header>
+);
 
-const Layout = ({ contentChildren }: LayoutProps) => (
+const Footer: React.FC = () => (
+    <footer>
+        Footer
+    </footer>
+)
+
+const Layout = ({ contentChildren, props={} }: LayoutProps) => (
     <>
-        <div>
-            te
-        </div>
-        {contentChildren}
+        <Header />
+        {contentChildren(props)}
+        <Footer />
     </>
 )
 

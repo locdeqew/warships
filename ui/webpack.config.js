@@ -1,35 +1,4 @@
 const path = require('path');
-const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
-
-const getStyleLoaders = (cssOptions, preProcessor) => {
-    const loaders = [
-      require.resolve('style-loader'),
-      {
-        loader: require.resolve('css-loader'),
-        options: cssOptions,
-      },
-      {
-        loader: require.resolve('postcss-loader'),
-        options: {
-          ident: 'postcss',
-          plugins: () => [
-            require('postcss-flexbugs-fixes'),
-            require('postcss-preset-env')({
-              autoprefixer: {
-                flexbox: 'no-2009',
-              },
-              stage: 3,
-            }),
-          ],
-        },
-      },
-    ];
-    if (preProcessor) {
-        loaders.push(require.resolve(preProcessor));
-    }
-    return loaders;
-  ;
-}
 
 module.exports = {
     mode: "production",
@@ -44,32 +13,26 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts(x?)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "ts-loader"
-                    }
-                ]
+              test: /\.ts(x?)$/,
+              include: path.resolve(__dirname, 'src'),
+              exclude: /node_modules/,
+              use: [
+                {
+                  loader: 'babel-loader',
+                }
+              ]
             },
             {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
+              test: /\.js$/,
+              use: ["source-map-loader"],
+              enforce: "pre"
             },
             {
-                test: /\.module\.css$/,
-                use: getStyleLoaders({
-                    importLoaders: 1,
-                    modules: true
-                }),
-            },
-            {
-                test: /\.css$/i,
-                exclude: /\.module\.css$/,
-                use: getStyleLoaders({
-                  importLoaders: 1,
-                }),
+              test: /\.css$/i,
+              loader: 'css-loader',
+              options: {
+                modules: true,
+              },
             }
         ]
     },
