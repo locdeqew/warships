@@ -27,11 +27,11 @@ const Footer: React.FC = () => (
 )
 
 const Layout = ({ contentChildren, props={} }: LayoutProps) => (
-    <>
+    <div className={styles.wrapper}>
         <Header />
         {contentChildren(props)}
         <Footer />
-    </>
+    </div>
 )
 
 export { Layout };
