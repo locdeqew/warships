@@ -10,11 +10,10 @@ import { combineReducers } from 'redux';
 
 import { authReducer } from './auth';
 
-export function rootReducer() {
-    combineReducers({
-        auth: authReducer
-    })
-};
+const rootReducer  = combineReducers({
+    auth: authReducer
+})
 
+export { rootReducer };
 
-export type AppState = ReturnType<typeof rootReducer>
+export type AppState = ReturnType<typeof rootReducer>;

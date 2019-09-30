@@ -9,7 +9,7 @@ import { BrowserRouter as Router } from "react-router-dom";
  * Store
  */
 
-import store from './store/store';
+ import makeStore from './store';
 
 /**
  * Components
@@ -18,6 +18,7 @@ import store from './store/store';
 import { App } from './App';
 
 const root = document.getElementById('app');
+const store = makeStore();
 
 render(
     <Provider store={store}>

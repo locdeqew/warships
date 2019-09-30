@@ -8,11 +8,16 @@ import * as React from 'react';
  * Components
  */
 
-import { Layout } from './components';
 import { AppRouter } from './appRouter';
 
+/**
+ * Styles
+ */
+
+import './index.css';
+
 const App: React.FC = () => (
-    <Layout contentChildren={AppRouter}/>
+    <AppRouter />
 )
 
 export { App };

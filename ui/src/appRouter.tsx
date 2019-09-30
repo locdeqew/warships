@@ -12,16 +12,19 @@ import { Switch, Route as ConnectedRoute } from 'react-router-dom';
 import { 
     Route,
     Dashboard, 
-    LoginForm
+    LoginForm,
+    Layout
 } from './components';
 
 
 
 const AppRouter: React.FC = () => (
-    <Switch>
-        <Route path='/' component={Dashboard} exact></Route>
-        <ConnectedRoute path='/login' component={LoginForm}></ConnectedRoute>
-    </Switch>
+    <Layout>
+        <Switch>
+            <Route path='/' component={Dashboard} exact></Route>
+            <ConnectedRoute path='/login' component={LoginForm}></ConnectedRoute>
+        </Switch>
+    </Layout>
 )
 
 export { AppRouter }
